@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>complete responsive fitness website design tutorial</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- bootstrap cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap");
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none !important;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #1d0e15;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #ff5421;
+}
+
+body {
+  background: #1d0e15;
+}
+
+section {
+  padding: 3rem 1rem;
+}
+
+.link-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: #ff5421;
+  color: #fff;
+  cursor: pointer;
+  border-radius: .5rem;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.link-btn:hover {
+  background: #fff;
+  color: #ff5421;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading span {
+  font-size: 2.5rem;
+  color: #ff5421;
+}
+
+.heading h3 {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.header {
+  z-index: 1000;
+  padding: 3rem 1rem;
+}
+
+.header.active {
+  background: #fff;
+  padding: 2rem 0;
+}
+
+.header.active .logo {
+  color: #000;
+}
+
+.header.active .nav a {
+  color: #000;
+}
+
+.header.active #menu-btn {
+  color: #000;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.header .logo span {
+  color: #ff5421;
+}
+
+.header .nav a {
+  font-size: 2rem;
+  margin-left: 2rem;
+  color: #fff;
+}
+
+.header .nav a:hover {
+  color: #ff5421;
+}
+
+.header #menu-btn {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+.header #login-btn {
+  display: visible;
+  font-size:2.5rem;
+  cursor: pointer;
+  color:#000;
+}
+
+.home {
+  background: url(../images/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 5rem;
+}
+
+.home span {
+  font-size: 2.5rem;
+  color: #ff5421;
+}
+
+.home h3 {
+  font-size: 5rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding-top: 1rem;
+}
+
+.about span {
+  font-size: 2.5rem;
+  color: #ff5421;
+}
+
+.about h3 {
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.about p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #ccc;
+}
+
+.about ul {
+  list-style: none;
+}
+
+.about ul li {
+  padding-top: 1.5rem;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.about ul li i {
+  padding-right: 1rem;
+  color: #ff5421;
+}
+
+.counter {
+  background: url(../images/counter-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.counter .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.counter .box-container .box {
+  text-align: center;
+}
+
+.counter .box-container .box h3 {
+  font-size: 5rem;
+  color: #ff5421;
+}
+
+.counter .box-container .box p {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.courses .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.courses .box-container .box {
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.courses .box-container .box:hover .image img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.courses .box-container .box .image {
+  height: 25rem;
+  overflow: hidden;
+}
+
+.courses .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.courses .box-container .box .content {
+  padding: 2rem;
+}
+
+.courses .box-container .box .content .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.courses .box-container .box .content .icons span {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.courses .box-container .box .content .icons span i {
+  color: #ff5421;
+  padding-right: .5rem;
+}
+
+.courses .box-container .box .content h3 {
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding: .5rem 0;
+}
+
+.pricing .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  gap: 2rem;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.pricing .box-container .box {
+  padding: 2rem;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  background: #1d0e15;
+  border-radius: .5rem;
+}
+
+.pricing .box-container .box:nth-child(2) {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.pricing .box-container .box h3 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding-top: 1rem;
+}
+
+.pricing .box-container .box .price {
+  padding: 1rem 0;
+  font-size: 6rem;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.pricing .box-container .box .price span {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.pricing .box-container .box .list {
+  padding-top: 2rem;
+}
+
+.pricing .box-container .box .list p {
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #ccc;
+}
+
+.pricing .box-container .box .list p i {
+  padding-right: .5rem;
+  color: #ff5421;
+}
+
+.pricing .box-container .box .list p i.fa-times {
+  color: #fff;
+}
+
+.join span {
+  font-size: 2.5rem;
+  color: #ff5421;
+}
+
+.join h3 {
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding-top: 1rem;
+}
+
+.join p {
+  padding: 1rem 0;
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #ccc;
+}
+
+.login span {
+  font-size: 2.5rem;
+  color: #ff5421;
+
+}
+ .login h3{
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding-top: 1rem;
+ }
+
+ .login p{
+  padding: 1rem 0;
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #ccc;
+ }
+
+
+.team .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.team .box-container .box {
+  height: 50rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.team .box-container .box:hover .content {
+  left: -100%;
+}
+
+.team .box-container .box:hover .share {
+  left: 0;
+}
+
+.team .box-container .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.team .box-container .box .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 1rem 2rem;
+}
+
+.team .box-container .box .content span {
+  font-size: 1.7rem;
+  color: #ff5421;
+}
+
+.team .box-container .box .content h3 {
+  font-size: 2rem;
+  color: #000;
+}
+
+.team .box-container .box .share {
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  background: #fff;
+  padding: 1.5rem 1rem;
+}
+
+.team .box-container .box .share a {
+  font-size: 2rem;
+  color: #000;
+  margin: 0 1rem;
+}
+
+.team .box-container .box .share a:hover {
+  color: #ff5421;
+}
+
+.blogs .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.blogs .box-container .box {
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.blogs .box-container .box:hover .image img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.blogs .box-container .box .image {
+  height: 25rem;
+  overflow: hidden;
+}
+
+.blogs .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.blogs .box-container .box .content {
+  padding: 2rem;
+}
+
+.blogs .box-container .box .content .link {
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.blogs .box-container .box .content .link:hover {
+  color: #ff5421;
+}
+
+.blogs .box-container .box .content .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.blogs .box-container .box .content .icons span {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.blogs .box-container .box .content .icons span i {
+  color: #ff5421;
+  padding-right: .5rem;
+}
+
+.footer {
+  background: url(../images/footer-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.footer .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+  font-size: 1.6rem;
+  line-height: 2;
+  color: #ccc;
+  padding: .5rem 0;
+  display: block;
+}
+
+.footer .box-container .box a i {
+  padding-right: .5rem;
+  color: #ff5421;
+}
+
+.footer .box-container .box a:hover {
+  color: #ff5421;
+}
+
+.footer .box-container .box p {
+  font-size: 1.8rem;
+  line-height: 2;
+  color: #ccc;
+}
+
+.footer .box-container .box .email {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
+}
+
+.footer .credit {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 0 1rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .credit span {
+  color: #ff5421;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .home h3 {
+    font-size: 3rem;
+  }
+  .pricing .box-container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .pricing .box-container .box:nth-child(2) {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .join h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem;
+  }
+  .header.active {
+    padding: 2rem;
+  }
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header #menu-btn.fa-times {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .header .nav {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1rem 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .nav.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .nav a {
+    color: #000;
+    margin: 1rem 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
+   </style>
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header fixed-top">
+
+   <div class="container">
+
+      <div class="row align-items-center justify-content-between">
+
+         <a href="#" class="logo"><span>BE</span>FIT</a>
+
+         <nav class="nav">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#courses">courses</a>
+            <a href="#pricing">pricing</a>
+            <a href="#team">team</a>
+            <a href="#blogs">blogs</a>
+            <a href="#register">register</a>
+         </nav>
+
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+      </div>
+
+   </div>
+
+</header>
+
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+   <div class="container">
+
+      <div class="row align-items-center min-vh-100">
+
+         <div class="col-md-6">
+            <img src="home-img.png" class="w-100" alt="">
+         </div>
+
+         <div class="col-md-6 text-center text-md-left">
+            <span>back to the gym</span>
+            <h3>start your fitness journey today</h3>
+            <a href="get started.html" class="link-btn">get started</a>
+         </div>
+
+      </div>
+
+   </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+   <div class="container">
+
+      <div class="row align-items-center flex-wrap-reverse">
+
+         <div class="col-md-6">
+            <span>about us</span>
+            <h3>Daily Workout and Stay Active at Home</h3>
+            <p>Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities. Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise, and sufficient rest along with a formal recovery plan.
+
+            </p>
+            <ul>
+               <li> <i class="far fa-check-square"></i> How to Support your Immume System </li>
+               <li> <i class="far fa-check-square"></i>A Guide to 30 Day Fitness & Workout Challenges</li>
+               <li> <i class="far fa-check-square"></i>Guide To Ease Your Back In The Gym</li>
+               <li> <i class="far fa-check-square"></i>The Mental Health Benefits of Exercise in Home</li>
+            </ul>
+         </div>
+
+         <div class="col-md-6">
+            <img src="about-img.png" class="w-100" alt="">
+         </div>   
+
+      </div>
+
+   </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- counter section starts  -->
+
+<section class="counter">
+
+   <div class="container box-container">
+
+      <div class="box">
+         <h3>40+</h3>
+         <p>online courses</p>
+      </div>
+
+      <div class="box">
+         <h3>320+</h3>
+         <p>gym equipments</p>
+      </div>
+
+      <div class="box">
+         <h3>180+</h3>
+         <p>online instructors</p>
+      </div>
+
+      <div class="box">
+         <h3>560+</h3>
+         <p>satiesfied clients</p>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- counter section ends -->
+
+<!-- courses section starts  -->
+
+<section class="courses" id="courses">
+
+   <div class="heading">
+      <span>our courses</span>
+      <h3>our latest courses</h3>
+   </div>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <div class="image">
+            <img src="img-1.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>weight lifting</h3>
+            <a href="readmore1.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-2.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>diet planing</h3>
+            <a href="readmore2.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-3.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>personal training</h3>
+            <a href="readmore3.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-4.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>challenges</h3>
+            <a href="readmore4.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-5.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>workshop</h3>
+            <a href="readmore5.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-6.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> mon - sat </span>
+               <span> <i class="fas fa-clock"></i> 1 hours </span>
+            </div>
+            <h3>hybrid fitness</h3>
+            <a href="readmore6.html" class="link-btn">read more</a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- courses section ends -->
+
+<!-- pricint section starts  -->
+
+<section class="pricing" id="pricing">
+
+   <div class="heading">
+      <span>choose a plane</span>
+      <h3>find a perfect plan</h3>
+   </div>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <h3>basic plan</h3>
+         <div class="price"><span>$</span>30<span>/mo</span></div>
+         <div class="list">
+            <p> <i class="fas fa-check"></i> personal training </p>
+            <p> <i class="fas fa-check"></i> classes per week </p>
+            <p> <i class="fas fa-check"></i> access to gym </p>
+            <p> <i class="fas fa-times"></i> protien powder </p>
+            <p> <i class="fas fa-times"></i> membership </p>
+         </div>
+      </div>
+
+      <div class="box">
+         <h3>premium plan</h3>
+         <div class="price"><span>$</span>60<span>/mo</span></div>
+         <div class="list">
+            <p> <i class="fas fa-check"></i> personal training </p>
+            <p> <i class="fas fa-check"></i> classes per week </p>
+            <p> <i class="fas fa-check"></i> access to gym </p>
+            <p> <i class="fas fa-check"></i> protien powder </p>
+            <p> <i class="fas fa-times"></i> membership </p>
+         </div>
+      </div>
+
+      <div class="box">
+         <h3>ultimate plan</h3>
+         <div class="price"><span>$</span>90<span>/mo</span></div>
+         <div class="list">
+            <p> <i class="fas fa-check"></i> personal training </p>
+            <p> <i class="fas fa-check"></i> classes per week </p>
+            <p> <i class="fas fa-check"></i> access to gym </p>
+            <p> <i class="fas fa-check"></i> protien powder </p>
+            <p> <i class="fas fa-check"></i> membership </p>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- pricint section ends -->
+
+<!-- join us section starts  -->
+
+<section class="join">
+
+   <div class="container">
+
+      <div class="row align-items-center">
+         <div class="col-md-7">
+            <img src="join-us-image.png" class="w-100" alt="">
+         </div>
+         <div class="col-md-5 text-center text-md-left">
+            <span>join us now</span>
+            <h3>join us & get upto 50% off</h3>
+            <p>Shape your body with us</p>
+            <a href="join.html" class="link-btn">join now</a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- join us section ends -->
+
+<!-- team section starts  -->
+
+<section class="team" id="team">
+
+   <div class="heading">
+      <span>our team</span>
+      <h3>meet the expert team</h3>
+   </div>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <img src="team-1.jpg" alt="">
+         <div class="content">
+            <span>gym trainer</span>
+            <h3>Stella</h3>
+         </div>
+         <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+         </div>
+      </div>
+
+      <div class="box">
+         <img src="team-2.jpg" alt="">
+         <div class="content">
+            <span>gym trainer</span>
+            <h3>Jhon</h3>
+         </div>
+         <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+         </div>
+      </div>
+
+      <div class="box">
+         <img src="team-3.jpg" alt="">
+         <div class="content">
+            <span>gym trainer</span>
+            <h3>Natalia</h3>
+         </div>
+         <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- team section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+   <div class="heading">
+      <span>our blogs</span>
+      <h3>our daily posts</h3>
+   </div>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <div class="image">
+            <img src="img-1.jpg" alt="">
+         </div>
+         <div class="content">
+            <a href="#" class="link">Make yourself stronger than your excuses.</a>
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+               <span> <i class="fas fa-user"></i> by admin </span>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-2.jpg" alt="">
+         </div>
+         <div class="content">
+            <a href="#" class="link">Push through the pain every single day.</a>
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+               <span> <i class="fas fa-user"></i> by admin </span>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img-3.jpg" alt="">
+         </div>
+         <div class="content">
+            <a href="#" class="link">You don't find will power create it.</a>
+            <div class="icons">
+               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+               <span> <i class="fas fa-user"></i> by admin </span>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+   <section class="register">
+
+      <div class="container">
+   
+         <div class="row align-items-center">
+            <div class="col-md-7">
+               <img src="join-us-image.png" class="w-100" alt="">
+            </div>
+            <div class="col-md-5 text-center text-md-left">
+
+   
+      <div id="register">
+         <style>
+            h3
+            {
+               text-align:center;font-family:algerian;
+            }
+            label
+            {
+               font-size: large;
+               color:white;
+            }
+            #name{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#age{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#email{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+  
+  
+}  
+#password{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+
+            </style>
+      <h3>let's start a new great day</h3><br>
+  <form action="register.jsp" method="post">
+      <label>Name:</label>
+      <input type="name"  name="uname" placeholder="enter your name" id="uname" class="box"><br>
+      <label> Age: </label>
+      <input type="age" name="uage" placeholder="enter your age" id="uage" class="box"><br>
+      <label> Email:</label>
+      <input type="email" name="umail" placeholder="enter your email" id="umail" class="box"><br>
+      <label>Password</label>
+      <input type="password" name="upass" placeholder="enter your password" id="upass" class="box">
+    
+      <input type="submit" value="Register now" class="link-btn">
+      
+   </form>
+
+</div>
+</header>
+
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+   <div class="box-container container">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="#home"> <i class="fas fa-angle-right"></i> home</a>
+         <a href="#about"> <i class="fas fa-angle-right"></i> about</a>
+         <a href="#courses"> <i class="fas fa-angle-right"></i> courses</a>
+         <a href="#pricing"> <i class="fas fa-angle-right"></i> pricing</a>
+         <a href="#team"> <i class="fas fa-angle-right"></i> team</a>
+         <a href="#blogs"> <i class="fas fa-angle-right"></i> blogs</a>
+         <a href="#register"> <i class="fas fa-angle-right"></i>register</a>
+      </div>
+
+      <div class="box">
+         <h3>contact info</h3>
+         <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+         <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+         <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
+         <a href="#"> <i class="fas fa-map"></i> mumbai, india - 400104 </a>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+         <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+         <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+         <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+      </div>
+
+      <div class="box">
+         <h3>newsletter</h3>
+         <p>subscribe for latest updates</p>
+         <form action="">
+            <input type="email" name="" placeholder="enter your email" id="" class="email">
+            <input type="submit" value="subscribe" class="link-btn">
+         </form>
+      </div>
+
+   </div>
+
+
+</section>
+
+<!-- footer section ends -->
+            
+<!-- custom js file link     -->
+<script src="js/script.js"></script>
+   
+</body>
+</html>
